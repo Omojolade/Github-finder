@@ -6,6 +6,7 @@ import GithubContext from "../../../context/github/githubContext"
 
 import Repos from "../../repos/Repos"
 
+
 const User = ({ match}) => {
   const githubContext = useContext(GithubContext)
 
@@ -101,7 +102,13 @@ const User = ({ match}) => {
                 Public Gists : {public_gists}
             </div>
         </div>
-        <Repos repos={repos} />
+        
+        {
+          repos? (<Repos repos={repos} />) :
+          (<Spinner/>)
+          }
+        
+
       </Fragment>
     );
   

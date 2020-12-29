@@ -33,27 +33,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Functional programming
 import React from "react";
 import UserItem from "./UserItem";

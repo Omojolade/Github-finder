@@ -14,12 +14,14 @@ let githubClientId;
 let githubClientSecret;
 
 if(process.env.NODE_ENV !== "production") {
-  githubClientId = process.env.GITHUB_CLIENT_ID;
- githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
-} else {
   githubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
  githubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
+ 
+} else {
+  githubClientId = process.env.GITHUB_CLIENT_ID;
+  githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
 }
+
 
 
 const GithubState = (props) => {
@@ -42,6 +44,8 @@ const GithubState = (props) => {
       type: SEARCH_USERS,
       payload: res.data.items,
     });
+    console.log(res)
+    
   };
 
   //Get a single user
